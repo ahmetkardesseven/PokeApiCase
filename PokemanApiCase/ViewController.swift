@@ -32,9 +32,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     if let json = data as? [String: Any], let results = json["results"] as? [[String: Any]] {
                         for pokemon in results {
                             if let name = pokemon["name"] as? String, let urlStr = pokemon["url"] as? String, let url = URL(string: urlStr) {
-                                // Pokemon nesnesi oluşturulması
                                 let newPokemon = Pokemon(name: name, url: url)
+                                
+                                // Pokemon nesnesine yetenekleri ekle
+                                AF.request(url).responseJSON { response in
+                                    switch response.result {
+                                    case .success(let data):
+                                        if let json = data as? [String: Any], let abilities = json["abilities"] as? [[String: Any]] {
+                                            for ability in abilities {
+                                                if let abilityDict = ability["ability"] as? [String: Any], let abilityName = abilityDict["name"] as? String {
+                                                    newPokemon.abilityNames.append(abilityName)
+                                                }
+                                            }
+                                        }
+                                        self.tableView.reloadData()
+                                    case .failure(let error):
+                                        print("Hata: \(error.localizedDescription)")
+                                    }
+                                }
+                                
                                 self.pokemons.append(newPokemon)
+                               
                             }
                         }
                         self.tableView.reloadData()
@@ -63,17 +81,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return cell
         }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let selectedPokemon = pokemons[indexPath.row]
-            let pokemonDetail = PokemonDetail(name: selectedPokemon.name, imageUrl: selectedPokemon.imageUrl)
+        let selectedPokemon = pokemons[indexPath.row]
+            
+            // Pokemon özellikleri ve yetenekleri için bir PokemonDetail örneği oluştur
+            let pokemonDetail = PokemonDetail(name: selectedPokemon.name, imageUrl: selectedPokemon.imageUrl, abilityNames: selectedPokemon.abilityNames)
+            
             performSegue(withIdentifier: "showDetailSegue", sender: pokemonDetail)
         }
         
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "showDetailSegue" {
-                if let detailVC = segue.destination as? DetailViewController, let pokemonDetail = sender as? PokemonDetail {
-                    detailVC.pokemonDetail = pokemonDetail
-                }
-            }
+                   if let detailVC = segue.destination as? DetailViewController, let pokemonDetail = sender as? PokemonDetail {
+                       detailVC.pokemonDetail = pokemonDetail
+                   }
+               }
         }
    
     
@@ -84,10 +105,11 @@ class Pokemon {
     let url: URL
     
     var imageUrl: URL {
-        // Pokemon resmi URL'sinin oluşturulması
         let id = url.lastPathComponent
         return URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(id).png")!
     }
+    
+    var abilityNames = [String]() // Yeni bir dizi ekle
     
     init(name: String, url: URL) {
         self.name = name

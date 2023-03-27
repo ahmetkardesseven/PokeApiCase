@@ -96,12 +96,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWY-vq-KVJ">
+                                <rect key="frame" x="46" y="340" width="323" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tma-qt-K7R"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="9kP-Od-okn"/>
                     <connections>
+                        <outlet property="pokemonAbilityLabel" destination="OWY-vq-KVJ" id="249-4C-us6"/>
                         <outlet property="pokemonImageView" destination="RhG-Vp-x6a" id="FSU-dA-ukh"/>
                         <outlet property="pokemonNameLabel" destination="s6a-D7-I4Q" id="H8D-d5-WlH"/>
                     </connections>

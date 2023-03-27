@@ -10,7 +10,7 @@ import UIKit
 class DetailViewController: UIViewController {
 
    
-    
+    @IBOutlet weak var pokemonAbilityLabel: UILabel!
     @IBOutlet weak var pokemonNameLabel: UILabel!
        @IBOutlet weak var pokemonImageView: UIImageView!
        
@@ -21,10 +21,13 @@ class DetailViewController: UIViewController {
            
            // Pokemon detaylarının gösterilmesi
            if let pokemonDetail = pokemonDetail {
-               pokemonNameLabel.text = pokemonDetail.name
+               pokemonNameLabel.text = pokemonDetail.name.capitalized
                pokemonImageView.kf.setImage(with: pokemonDetail.imageUrl)
+               pokemonAbilityLabel.text = pokemonDetail.abilityNames.joined(separator: ",").capitalized
+               
            }
        }
+    
     
 
     
@@ -33,10 +36,11 @@ class DetailViewController: UIViewController {
 class PokemonDetail {
     let name: String
     let imageUrl: URL
+    let abilityNames: [String] // Yeni bir dizi ekle
     
-    init(name: String, imageUrl: URL) {
+    init(name: String, imageUrl: URL, abilityNames: [String]) {
         self.name = name
         self.imageUrl = imageUrl
+        self.abilityNames = abilityNames
     }
-
 }
