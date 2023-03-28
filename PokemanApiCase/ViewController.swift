@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 import Kingfisher
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+final class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     

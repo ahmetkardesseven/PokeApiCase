@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Pokemon-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PokemanApiCase" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,6 +50,7 @@
                                                 <constraint firstItem="pJq-fq-ejQ" firstAttribute="leading" secondItem="sja-I2-0MC" secondAttribute="trailing" constant="38" id="lN7-Xn-GNH"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
                                         <connections>
                                             <outlet property="pokemonImageView" destination="sja-I2-0MC" id="V2H-2A-nee"/>
                                             <outlet property="pokemonNameLabel" destination="pJq-fq-ejQ" id="2Zl-JR-IRo"/>
@@ -67,7 +68,7 @@
                             <constraint firstItem="HGZ-u0-Wj8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ome-nP-68y"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yLL-zx-j4s"/>
+                    <navigationItem key="navigationItem" title="Pokemon" id="yLL-zx-j4s"/>
                     <connections>
                         <outlet property="tableView" destination="HGZ-u0-Wj8" id="QY4-Kf-zQV"/>
                         <segue destination="8Ua-UZ-kcY" kind="show" identifier="showDetailSegue" id="3Ri-dO-AHV"/>
@@ -123,8 +124,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="in0-7R-I6v" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7VP-ch-OBm">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="7VP-ch-OBm">
+                        <rect key="frame" x="0.0" y="48" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -140,6 +141,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
