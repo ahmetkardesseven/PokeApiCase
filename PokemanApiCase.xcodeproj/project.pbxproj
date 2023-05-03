@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE799DF52A02674A005F1578 /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE799DF42A02674A005F1578 /* PokemonModel.swift */; };
 		E322775D29D16CCE00776E0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E322775C29D16CCE00776E0B /* AppDelegate.swift */; };
 		E322775F29D16CCE00776E0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E322775E29D16CCE00776E0B /* SceneDelegate.swift */; };
 		E322776129D16CCE00776E0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E322776029D16CCE00776E0B /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE799DF42A02674A005F1578 /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
 		E322775929D16CCE00776E0B /* PokemanApiCase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemanApiCase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E322775C29D16CCE00776E0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E322775E29D16CCE00776E0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				E322776029D16CCE00776E0B /* ViewController.swift */,
 				E38358F129D1D9F200A06384 /* DetailViewController.swift */,
 				E38358F329D1DA3700A06384 /* PokemonTableViewCell.swift */,
+				BE799DF42A02674A005F1578 /* PokemonModel.swift */,
 				E322776229D16CCE00776E0B /* Main.storyboard */,
 				E322776529D16CD200776E0B /* Assets.xcassets */,
 				E322776729D16CD200776E0B /* LaunchScreen.storyboard */,
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E322776129D16CCE00776E0B /* ViewController.swift in Sources */,
+				BE799DF52A02674A005F1578 /* PokemonModel.swift in Sources */,
 				E38358F229D1D9F200A06384 /* DetailViewController.swift in Sources */,
 				E322775D29D16CCE00776E0B /* AppDelegate.swift in Sources */,
 				E38358F429D1DA3800A06384 /* PokemonTableViewCell.swift in Sources */,

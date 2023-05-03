@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="in0-7R-I6v">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="in0-7R-I6v">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HGZ-u0-Wj8">
-                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PokemonTableViewCell" rowHeight="120" id="Oay-VG-X3r" customClass="PokemonTableViewCell" customModule="PokemanApiCase" customModuleProvider="target">
@@ -58,18 +59,29 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ZyK-W9-P6E">
+                                <rect key="frame" x="0.0" y="92" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="TqT-Ny-SxI"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HGZ-u0-Wj8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5fc-wQ-cMG"/>
-                            <constraint firstItem="HGZ-u0-Wj8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7Ks-5i-mqC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HGZ-u0-Wj8" secondAttribute="bottom" id="feC-ld-5C8"/>
-                            <constraint firstItem="HGZ-u0-Wj8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ome-nP-68y"/>
+                            <constraint firstItem="ZyK-W9-P6E" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3A1-JU-zUS"/>
+                            <constraint firstItem="ZyK-W9-P6E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5eP-NS-yPn"/>
+                            <constraint firstItem="HGZ-u0-Wj8" firstAttribute="top" secondItem="ZyK-W9-P6E" secondAttribute="bottom" id="IBT-0T-pZk"/>
+                            <constraint firstItem="HGZ-u0-Wj8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="anu-Bk-Mm6"/>
+                            <constraint firstItem="HGZ-u0-Wj8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dGf-1I-H4O"/>
+                            <constraint firstItem="HGZ-u0-Wj8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ew6-xu-6ug"/>
+                            <constraint firstItem="ZyK-W9-P6E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="i7Y-dR-zje"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pokemon" id="yLL-zx-j4s"/>
                     <connections>
+                        <outlet property="searcBar" destination="ZyK-W9-P6E" id="xAv-nC-Lh3"/>
                         <outlet property="tableView" destination="HGZ-u0-Wj8" id="QY4-Kf-zQV"/>
                         <segue destination="8Ua-UZ-kcY" kind="show" identifier="showDetailSegue" id="3Ri-dO-AHV"/>
                     </connections>

@@ -27,20 +27,5 @@ import UIKit
                
            }
        }
-    
-    
-
-    
-
 }
-class PokemonDetail {
-    let name: String
-    let imageUrl: URL
-    let abilityNames: [String] // Yeni bir dizi ekle
-    
-    init(name: String, imageUrl: URL, abilityNames: [String]) {
-        self.name = name
-        self.imageUrl = imageUrl
-        self.abilityNames = abilityNames
-    }
-}
+

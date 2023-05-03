@@ -16,7 +16,4 @@ import UIKit
         super.awakeFromNib()
         // Initialization code
     }
-
-    
-
 }
